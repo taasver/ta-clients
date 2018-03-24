@@ -17,3 +17,14 @@ Based on: https://medium.com/@cramirez92/build-a-nodejs-cinema-microservice-and-
 
 ### Frontend
 TODO
+
+
+
+TODO: 
+* insert fake data
+* frontend
+* clients POST
+* clients GET
+* clients GET by id
+* backend tests
+* refactor backend structure!?

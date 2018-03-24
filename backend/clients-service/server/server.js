@@ -1,5 +1,6 @@
 const express = require('express');
 const helmet = require('helmet');
+const cors = require('cors');
 const api = require('../api/clients');
 
 const start = (options) => {
@@ -9,6 +10,7 @@ const start = (options) => {
 
     const app = express();
     app.use(helmet());
+    app.use(cors())
     app.use((err, req, res, next) => {
       reject(new Error('Something went wrong!, err:' + err));
       res.status(500).send('Something went wrong!');
