@@ -1,0 +1,23 @@
+// ===========================================================
+// BUTTON STYLES
+// ===========================================================
+.btn {
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid $brand-primary;
+  border-radius: 2px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  touch-action: manipulation;
+  color: $white;
+  background-color: $brand-primary;
+  &:hover {
+    background-color: $brand-primary-lighter;
+    border-color: $brand-primary-lighter;
+  }
+}

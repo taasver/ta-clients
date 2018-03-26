@@ -1,0 +1,60 @@
+// ===========================================================
+// LIST OF CLIENT COMPONENT STYLES
+// ===========================================================
+.clients-header {
+  border-bottom: 2px solid $gray;
+  &__input {
+    max-width: 63%;
+    @media (min-width: $xs) { max-width: 300px; }
+  }
+  &__controls { padding-left: 10px; }
+}
+.clients-page { padding-top: 62px; } // height of the fixed search input area
+.clients {
+  @media (min-width: $xs) { padding: 10px; }
+}
+.clients-container {
+  @media (min-width: $xs) {
+    padding: 10px;
+    float: left;
+    width: 25%;
+    height: 200px;
+  }
+  @media (min-width: $sm) { width: 20%; }
+  @media (min-width: $md) { width: 16%; }
+}
+.clients {
+  @include transition(all 0.2s ease);
+  border-bottom: 1px solid $gray;
+  &__photo {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: $gray; // fallback and will be visible while photo is loading
+    background-size: cover;
+    background-position: center center;
+  }
+  &__text { padding-left: 10px; }
+  @media (min-width: $xs) {
+    border: 0;
+    padding: 0;
+    border-radius: 2px;
+    display: inline-block; // fallback if flex is not supported
+    display: flex;
+    flex-flow: column;
+    box-shadow: 0 2px 4px #aaa;
+    &:hover { box-shadow: 2px 4px 8px #aaa; }
+    &__photo {
+      display: block;
+      width: 100%;
+      height: 150px;
+      border-radius: 0;
+    }
+    &__text {
+      display: block;
+      padding: 5px 10px;
+      text-align: center;
+      flex: 0 0 auto;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+// ===========================================================
+// CONTAINERS ETC
+// ===========================================================
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  @include clearfix;
+  @media (min-width: $xs) { width: $xs; }
+  @media (min-width: $sm) { width: $sm; }
+  @media (min-width: $md) { width: $md; }
+}

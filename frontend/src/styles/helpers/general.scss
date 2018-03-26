@@ -1,0 +1,56 @@
+// ===========================================================
+// SET OF CSS HELPER CLASSESS
+// Feel free to extend with other reusable one-liners
+// ===========================================================
+
+// fonts sizes
+.font-18 { font-size: 18px; }
+
+// display
+.inline-block { display: inline-block; }
+.d-table { display: table; }
+.d-table-cell { display: table-cell; }
+
+// positioning
+.pos-rel { position: relative; }
+.pos-abs { position: absolute; }
+.pos-fix { position: fixed; }
+.right-0 { right: 0; }
+.z-1 { z-index: 1; }
+
+// text alignment
+.text-left   { text-align: left; }
+.text-center { text-align: center; }
+
+// vertical alignment
+.v-middle { vertical-align: middle; }
+
+// floats
+.pull-left { float: left; }
+.pull-right { float: right; }
+.clearfix { @include clearfix; }
+
+// paddings
+.padding-5 { padding: 5px; }
+.padding-10 { padding: 10px; }
+.padding-20 { padding: 20px; }
+
+// colors
+.brand-primary { color: $brand-primary; }
+
+// background colors
+.white-bg { background-color: $white; }
+.gray-bg { background-color: $gray; }
+
+// sizes
+.full-width { width: 100%; }
+.full-height { height: 100%; }
+
+// overflow
+.o-hidden { overflow: hidden; }
+
+// opacity
+.faded { opacity: 0.5; }
+
+// cursors
+.cursor-pointer { cursor: pointer; }

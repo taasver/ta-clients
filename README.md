@@ -12,19 +12,20 @@
 
 ### Backend
 TODO
-..
-Based on: https://medium.com/@cramirez92/build-a-nodejs-cinema-microservice-and-deploying-it-with-docker-part-1-7e28e25bfa8b
+https://medium.com/@cramirez92/build-a-nodejs-cinema-microservice-and-deploying-it-with-docker-part-1-7e28e25bfa8b
+https://medium.freecodecamp.org/building-a-simple-node-js-api-in-under-30-minutes-a07ea9e390d2
 
 ### Frontend
 TODO
 
 
-
-TODO: 
+TODO:
+* refactor frontend
 * insert fake data
-* frontend
+* frontend (app, styles, favicon)
 * clients POST
 * clients GET
 * clients GET by id
 * backend tests
+* favicon
 * refactor backend structure!?

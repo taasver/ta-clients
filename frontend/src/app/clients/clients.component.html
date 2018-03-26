@@ -1,0 +1,62 @@
+<div class="text-center">
+
+  <!-- SEARCH INPUT -->
+  <div class="clients-header pos-fix full-width white-bg padding-10">
+    <div class="container">
+      <div class="clients-header__input pull-left full-width pos-rel">
+        <label for="clients-query" class="pos-abs left-0 z-1 font-18 cursor-pointer brand-primary">
+          <i class="input-simple__icon fa fa-search white-bg" aria-hidden="true">
+          </i>
+        </label>
+        <div class="pos-abs right-0 z-1 font-18 cursor-pointer brand-primary">
+          <i *ngIf="query.length" (click)="clearQuery()"
+             class="input-simple__clear fa fa-times white-bg" aria-hidden="true">
+          </i>
+        </div>
+        <input [(ngModel)]="query" (ngModelChange)="search()" type="text" id="clients-query" name="clients-query"
+               class="input-simple input-simple--with-icon full-width padding-10" placeholder="Search for a client.." />
+      </div>
+      <div class="clients-header__controls pull-right">
+        <a class="btn full-width padding-10">
+          ADD NEW
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- CLIENTS CONTAINER -->
+  <div class="clients-page">
+
+    <!-- RESULT COUNT -->
+    <div *ngIf="query && filteredClients.length" class="padding-5 gray-bg">
+      Found {{filteredClients.length}} client{{filteredClients.length === 1 ? '' : 's'}}
+    </div>
+
+    <!-- NOTHING FOUND -->
+    <div *ngIf="!filteredClients.length" class="padding-20">
+      No clients found
+    </div>
+
+    <!-- RESULTS -->
+    <div class="clients container">
+      <div *ngFor="let client of filteredClients" class="client-container">
+        <div class="client d-table full-width full-height padding-5 text-left o-hidden cursor-pointer">
+          <div [ngStyle]="{'background-image': 'url(' + client.photo + ')'}"
+               class="client__photo d-table-cell v-middle">
+          </div>
+          <div class="client__text d-table-cell v-middle">{{client.name}}</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LOADER -->
+    <i *ngIf="isLoading" class="fa fa-2x fa-spin fa-spinner faded padding-20" aria-hidden="true"></i>
+
+    <!-- ERROR -->
+    <div *ngIf="isError" class="padding-20">
+      Oops! Something went wrong..
+    </div>
+
+  </div>
+
+</div>

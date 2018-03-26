@@ -1,0 +1,23 @@
+// ===========================================================
+// IMPORT ALL THE REQUIRED STYLES
+// ===========================================================
+
+// Fonts
+@import '../../node_modules/font-awesome/css/font-awesome.min.css';
+@import 'fonts/fonts.scss';
+
+// Configurations, main element styles etc
+@import 'config/variables.scss';
+@import 'config/mixins.scss';
+@import 'config/general.scss';
+@import 'config/layout.scss';
+
+// Helpers (OOCSS)
+@import 'helpers/general.scss';
+
+// HTML elements etc
+@import 'elements/inputs.scss';
+@import 'elements/buttons.scss';
+
+// Component styles
+@import 'components/clients.scss';

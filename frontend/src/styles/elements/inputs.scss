@@ -1,0 +1,20 @@
+// ===========================================================
+// INPUT STYLES
+// ===========================================================
+.input-simple {
+  outline: 0;
+  border: 1px solid $gray;
+  border-radius: 2px;
+  box-shadow: none;
+  &--with-icon { padding-left: 38px; }
+  &__icon {
+    padding: 8px;
+    margin: 4px;
+  }
+  &__clear {
+    @include transition(all 0.2s ease);
+    padding: 8px;
+    margin: 4px;
+    &:hover { color: $red; }
+  }
+}
