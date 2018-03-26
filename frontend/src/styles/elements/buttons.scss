@@ -1,6 +1,7 @@
 // ===========================================================
 // BUTTON STYLES
 // ===========================================================
+$btn-gray: #aaa; 
 .btn {
   display: inline-block;
   cursor: pointer;
@@ -19,5 +20,9 @@
   &:hover {
     background-color: $brand-primary-lighter;
     border-color: $brand-primary-lighter;
+  }
+  &--gray {
+    background-color: $btn-gray;
+    border-color: $btn-gray;
   }
 }

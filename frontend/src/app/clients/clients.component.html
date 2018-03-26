@@ -17,7 +17,7 @@
                class="input-simple input-simple--with-icon full-width padding-10" placeholder="Search for a client.." />
       </div>
       <div class="clients-header__controls pull-right">
-        <a class="btn full-width padding-10">
+        <a routerLink="client" class="btn full-width padding-10">
           ADD NEW
         </a>
       </div>
@@ -38,7 +38,7 @@
     </div>
 
     <!-- RESULTS -->
-    <div class="clients container">
+    <div *ngIf="filteredClients.length" class="clients container">
       <div *ngFor="let client of filteredClients" class="client-container">
         <div class="client d-table full-width full-height padding-5 text-left o-hidden cursor-pointer">
           <div [ngStyle]="{'background-image': 'url(' + client.photo + ')'}"

@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent }  from './app.component';
 import { ClientsComponent }  from './clients/clients.component';
+import { ClientComponent }  from './clients/client.component';
 import { ClientsService } from './clients/clients.service';
 
 @NgModule({
@@ -19,7 +20,8 @@ import { ClientsService } from './clients/clients.service';
   providers: [ ClientsService ],
   declarations: [
     AppComponent,
-    ClientsComponent
+    ClientsComponent,
+    ClientComponent
   ],
   bootstrap: [ AppComponent ]
 })

@@ -20,7 +20,6 @@ TODO
 
 
 TODO:
-* refactor frontend
 * insert fake data
 * frontend (app, styles, favicon)
 * clients POST
