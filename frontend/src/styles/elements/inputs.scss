@@ -7,6 +7,7 @@
   border-radius: 2px;
   box-shadow: none;
   &--with-icon { padding-left: 38px; }
+  &--invalid { border-color: $red; }
   &__icon {
     padding: 8px;
     margin: 4px;

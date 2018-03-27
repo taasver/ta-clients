@@ -3,7 +3,18 @@
 // ===========================================================
 .client {
   max-width: 500px;
-  &__field { padding: 10px 0; }
-  &__buttons { padding: 15px 0; }
-  &__button { width: 49%; }
+  padding: 0 10px;
+  &__field {
+    padding: 8px 4px;
+    &--small { width: 50%; }
+  }
+  &__buttons { padding: 13px 0; }
+  &__button-container {
+    padding: 8px 4px;
+    width: 50%;
+  }
+  &__error {
+    padding-top: 8px;
+    color: $red;
+  }
 }

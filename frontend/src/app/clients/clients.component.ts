@@ -34,7 +34,7 @@ export class ClientsComponent implements OnInit, OnDestroy {
   // Filter all clients based on query string. Search from names and numbers
   search() {
     this.filteredClients = this.clients.filter((client: Client) => {
-      return client.name.toLowerCase().indexOf(this.query.toLowerCase()) > -1 || // case insensitive
+      return client.firstName.toLowerCase().indexOf(this.query.toLowerCase()) > -1 || // case insensitive
              client.phone.indexOf(this.query) > -1; 
     });
   }

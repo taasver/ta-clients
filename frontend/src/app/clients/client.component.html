@@ -1,29 +1,91 @@
-<div class="client container text-center padding-10">
-  <h1>Add a new client</h1>
+<div class="client container text-center">
+  <h1>Client Details</h1>
 
-  <form class="text-left">
+  <!-- LOADER -->
+  <i *ngIf="isLoading" class="fa fa-2x fa-spin fa-spinner faded padding-20" aria-hidden="true"></i>
 
+  <!-- ERROR -->
+  <div *ngIf="error && !client" class="padding-20">
+    {{error}}
+  </div>
+
+  <!-- CLIENT FORM -->
+  <form *ngIf="!isLoading && client" (submit)="onSubmit($event)" class="text-left">
     <div class="client__field">
-      <label class="inline-block padding-5">Name*</label>
-      <input type="text" id="client-name" name="client-name"
-             class="input-simple full-width padding-10" placeholder="John Smith" />
+      <label for="email" class="inline-block padding-5">Email*</label>
+      <input [(ngModel)]="client.email" type="text" id="email" name="email"
+             class="input-simple full-width padding-10" placeholder="john@smith.com"
+             [class.input-simple--invalid]="isFormSubmitted && !client.email" />
     </div>
-
     <div class="client__field">
-      <label class="inline-block padding-5">Phone number*</label>
-      <input type="text" id="client-phone" name="client-phone"
-             class="input-simple full-width padding-10" placeholder="0800 432 1234" />
+      <label for="phone" class="inline-block padding-5">Phone Number*</label>
+      <input [(ngModel)]="client.phone" type="text" id="phone" name="phone"
+             class="input-simple full-width padding-10" placeholder="0800 432 1234"
+             [class.input-simple--invalid]="isFormSubmitted && !client.phone" />
     </div>
-
+    <div class="clearfix">
+      <div class="client__field client__field--small pull-left">
+        <label for="first-name" class="inline-block padding-5">First Name</label>
+        <input [(ngModel)]="client.firstName" type="text" id="first-name" name="first-name"
+               class="input-simple full-width padding-10" placeholder="John" />
+      </div>
+      <div class="client__field client__field--small pull-left">
+        <label for="last-name" class="inline-block padding-5">Last Name</label>
+        <input [(ngModel)]="client.lastName" type="text" id="last-name" name="last-name"
+               class="input-simple full-width padding-10" placeholder="Smith" />
+      </div>
+    </div>
+    <div class="client__field">
+      <label for="photo" class="inline-block padding-5">Photo (link to image)</label>
+      <input [(ngModel)]="client.photo" type="text" id="photo" name="photo"
+             class="input-simple full-width padding-10" placeholder="https://clients.com/photo.jpg" />
+    </div>
+    <div class="client__field">
+      <label for="company" class="inline-block padding-5">Company</label>
+      <input [(ngModel)]="client.company" type="text" id="company" name="company"
+             class="input-simple full-width padding-10" placeholder="Smith Corp." />
+    </div>
+    <div class="clearfix">
+      <div class="client__field client__field--small pull-left">
+        <label for="country" class="inline-block padding-5">Country</label>
+        <input [(ngModel)]="client.country" type="text" id="country" name="country"
+               class="input-simple full-width padding-10" placeholder="United Kingdom" />
+      </div>
+      <div class="client__field client__field--small pull-left">
+        <label for="city" class="inline-block padding-5">City</label>
+        <input [(ngModel)]="client.city" type="text" id="city" name="city"
+               class="input-simple full-width padding-10" placeholder="London" />
+      </div>
+    </div>
+    <div class="clearfix">
+      <div class="client__field client__field--small pull-left">
+        <label for="address" class="inline-block padding-5">Address</label>
+        <input [(ngModel)]="client.address" type="text" id="address" name="address"
+               class="input-simple full-width padding-10" placeholder="Home street 5" />
+      </div>
+      <div class="client__field client__field--small pull-left">
+        <label for="postal-code" class="inline-block padding-5">Postal Code</label>
+        <input [(ngModel)]="client.postalCode" type="text" id="postal-code" name="postal-code"
+               class="input-simple full-width padding-10" placeholder="WC2N 5DU" />
+      </div>
+    </div>
+    <div *ngIf="error" class="client__error text-center">
+      {{error}}
+    </div>
     <div class="client__buttons clearfix">
-      <a routerLink="/" class="client__button pull-left btn btn--gray padding-10">
-        BACK
-      </a>
-      <button class="client__button pull-right btn padding-10">
-        SAVE
-      </button>
+      <div class="client__button-container pull-left">
+        <a routerLink="/" class="btn full-width btn--gray padding-10">
+          BACK
+        </a>
+      </div>
+      <div class="client__button-container pull-left">
+        <button class="btn full-width padding-10">
+          <span *ngIf="!isFormLoading && !isFormSuccessful">SAVE</span>
+          <i *ngIf="isFormLoading" class="fa fa-spin fa-spinner" aria-hidden="true"></i>
+          <i *ngIf="isFormSuccessful" class="fa fa-check" aria-hidden="true"></i>
+        </button>
+      </div>
     </div>
-
   </form>
 
 </div>

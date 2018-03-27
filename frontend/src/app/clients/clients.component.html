@@ -33,7 +33,7 @@
     </div>
 
     <!-- NOTHING FOUND -->
-    <div *ngIf="!filteredClients.length" class="padding-20">
+    <div *ngIf="!isLoading && !filteredClients.length" class="padding-20">
       No clients found
     </div>
 
@@ -44,7 +44,7 @@
           <div [ngStyle]="{'background-image': 'url(' + client.photo + ')'}"
                class="client__photo d-table-cell v-middle">
           </div>
-          <div class="client__text d-table-cell v-middle">{{client.name}}</div>
+          <div class="client__text d-table-cell v-middle">{{client}}</div>
         </div>
       </div>
     </div>

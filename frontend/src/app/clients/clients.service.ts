@@ -23,4 +23,25 @@ export class ClientsService {
     });
   }
 
+  getClient = (id: string): Observable<any> => {
+    let url = `${process.env.API_URL}/clients/${id}`;
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.get(url, {headers: headers}).map(response => response.json());
+  }
+
+  saveClient = (client: Client): Observable<any> => {
+    let url = `${process.env.API_URL}/clients`;
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post(url, client, {headers: headers}).map(response => response.json());
+  }
+
+  updateClient = (client: Client): Observable<any> => {
+    let url = `${process.env.API_URL}/clients/${client.id}`;
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.patch(url, client, {headers: headers}).map(response => response.json());
+  }
+
 }
