@@ -20,11 +20,13 @@ TODO
 
 
 TODO:
+* frontend (clients comp + spec, client comp + spec)
+* frontend photo placeholder
 * insert fake data
-* frontend (app, styles, favicon)
 * clients POST
+* clients PATCH
 * clients GET
 * clients GET by id
 * backend tests
-* favicon
 * refactor backend structure!?
+* recheck frontend (cleanup etc)

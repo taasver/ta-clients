@@ -33,7 +33,7 @@
     </div>
 
     <!-- NOTHING FOUND -->
-    <div *ngIf="!isLoading && !filteredClients.length" class="padding-20">
+    <div *ngIf="!isLoading && !isError && !filteredClients.length" class="padding-20">
       No clients found
     </div>
 

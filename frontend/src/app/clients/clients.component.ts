@@ -31,11 +31,16 @@ export class ClientsComponent implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
 
-  // Filter all clients based on query string. Search from names and numbers
+  // Filter all clients based on query string. Search from names, numbers and emails etc (case insensitive)
   search() {
+    let query = this.query.toLowerCase();
+    let searchFields: string[] = ['id', 'email', 'phone', 'firstName', 'lastName', 'company'];
     this.filteredClients = this.clients.filter((client: Client) => {
-      return client.firstName.toLowerCase().indexOf(this.query.toLowerCase()) > -1 || // case insensitive
-             client.phone.indexOf(this.query) > -1; 
+      for (var i = 0; i < searchFields.length; i++) {
+        let field = searchFields[i];
+        if (client[field] && client[field].toLowerCase().indexOf(query) > -1) { return true; }
+      }
+      return false; // no match by default
     });
   }
 
