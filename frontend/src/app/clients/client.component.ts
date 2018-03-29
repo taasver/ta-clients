@@ -64,7 +64,7 @@ export class ClientComponent implements OnInit {
       this.isFormLoading = true;
       this.clientsService.updateClient(this.client._id, newData).subscribe(this.clientSuccessfullySaved, error => {
         this.isFormLoading = false;
-        this.error = 'Oops! Could not save the client';
+        this.error = error.json().message || 'Oops! Could not save the client';
       });
     } else { // save new client and go back to list page
       this.isFormLoading = true;
@@ -73,7 +73,7 @@ export class ClientComponent implements OnInit {
         setTimeout(() => this.router.navigate(['/']), 1000); // back to list page in 1s
       }, error => {
         this.isFormLoading = false;
-        this.error = 'Oops! Could not create new client';
+        this.error = error.json().message || 'Oops! Could not save the client';
       });
     }
   }

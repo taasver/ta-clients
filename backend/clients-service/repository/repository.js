@@ -38,9 +38,15 @@ module.exports = class ClientsRepository {
 
   insertClient(data) {
     return new Promise((resolve, reject) => {
+      if (!data.email || !data.phone) {
+        reject({invalidData: true, message: 'Please enter phone and email!'});
+        return;
+      }
+
+      // TODO: validate UK nr
 
 
-      // TODO: validate data
+      // TODO: encrypt nr
 
 
       this.collection.insertOne(data, (err, res) => {
@@ -52,15 +58,15 @@ module.exports = class ClientsRepository {
 
   updateClient(id, data) {
     return new Promise((resolve, reject) => {
-
-
-
-      // TODO: validate data and post proper data
-      let newData = { $set: data };
-
-
-
-      this.collection.findOneAndUpdate({_id: ObjectId(id)}, newData, { returnOriginal: false }, (err, res) => {
+      if (data.phone || data.phone === '') {
+        reject({invalidData: true, message: 'Phone cannot be changed!'});
+        return;
+      }
+      if (data.email === '') {
+        reject({invalidData: true, message: 'Email cannot be empty!'});
+        return;
+      }
+      this.collection.findOneAndUpdate({_id: ObjectId(id)}, { $set: data }, { returnOriginal: false }, (err, res) => {
         if (err) { reject(new Error(`An error occured updating a client, err: ${err}`)); }
         resolve(res.value); 
       });

@@ -11,22 +11,34 @@
 * open http://localhost:8080 (if not automatically opened)
 
 ### Backend
-TODO
-https://medium.com/@cramirez92/build-a-nodejs-cinema-microservice-and-deploying-it-with-docker-part-1-7e28e25bfa8b
-https://medium.freecodecamp.org/building-a-simple-node-js-api-in-under-30-minutes-a07ea9e390d2
+NB! since I'm applying for frontend position the backend might not be perfect.
+* backend tech: Node.js, Express, Mongodb
 
 ### Frontend
-TODO
+* frontend tech: Angular, Typescript, Webpack, SCSS
+
+### Further improvements (will not be done in the scope of this test)
+* delete client possibility
+* validate email and other fields
 
 
 TODO:
 * frontend client comp spec
+* make phone-non changeable
 * recheck frontend (cleanup etc)
 
 * add more fake data
-* clients POST
-* clients PATCH
+* POST validation
+* PATCH validation
+* phone validation
+* store phone in a secure encrypted way
+* phone last 4 digits
 * backend tests
 * refactor ObjectId
 * refactor backend structure!?
 * recheck backend (cleanup etc)
+
+https://medium.com/@cramirez92/build-a-nodejs-cinema-microservice-and-deploying-it-with-docker-part-1-7e28e25bfa8b
+https://medium.freecodecamp.org/building-a-simple-node-js-api-in-under-30-minutes-a07ea9e390d2
+
+https://github.com/ruimarinho/google-libphonenumber

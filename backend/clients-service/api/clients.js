@@ -20,13 +20,25 @@ module.exports = (app, options) => {
   app.post('/clients', (req, res, next) => {
     repo.insertClient(req.body).then(client => {
       res.status(status.OK).json(client);
-    }).catch(next);
+    }).catch(err => {
+      if (err.invalidData) {
+        res.status(status.UNPROCESSABLE_ENTITY).json({message: err.message});
+      } else {
+        next(err);
+      }
+    });
   });
 
   app.patch('/clients/:id', (req, res, next) => {
     repo.updateClient(req.params.id, req.body).then(client => {
       res.status(status.OK).json(client);
-    }).catch(next);
+    }).catch(err => {
+      if (err.invalidData) {
+        res.status(status.UNPROCESSABLE_ENTITY).json({message: err.message});
+      } else {
+        next(err);
+      }
+    });
   });
 
 };
