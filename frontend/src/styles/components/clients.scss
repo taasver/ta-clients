@@ -3,6 +3,9 @@
 // ===========================================================
 .clients-header {
   border-bottom: 2px solid $gray;
+  &__container {
+    @media (min-width: $xs) { padding: 10px 20px; }
+  }
   &__input {
     max-width: 63%;
     @media (min-width: $xs) { max-width: 300px; }
@@ -21,7 +24,7 @@
     height: 200px;
   }
   @media (min-width: $sm) { width: 20%; }
-  @media (min-width: $md) { width: 16%; }
+  @media (min-width: $md) { width: 16.66%; }
 }
 .client-card {
   @include transition(all 0.2s ease);
@@ -31,9 +34,9 @@
     height: 50px;
     width: 50px;
     border-radius: 50%;
-    background-color: $gray; // fallback and will be visible while photo is loading
     background-size: cover;
     background-position: center center;
+    background-color: $gray; // fallback and will be visible while photo is loading
   }
   &__text { padding-left: 10px; }
   @media (min-width: $xs) {

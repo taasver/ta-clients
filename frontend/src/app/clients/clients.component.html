@@ -2,7 +2,7 @@
 
   <!-- SEARCH INPUT -->
   <div class="clients-header pos-fix full-width white-bg">
-    <div class="container padding-10">
+    <div class="clients-header__container container padding-10">
       <div class="clients-header__input pull-left full-width pos-rel">
         <label for="clients-query" class="pos-abs left-0 z-1 font-18 cursor-pointer brand-primary">
           <i class="input-simple__icon fa fa-search white-bg" aria-hidden="true">
@@ -42,7 +42,7 @@
       <div *ngFor="let client of filteredClients" class="client-card-container">
         <a routerLink="client/{{client._id}}"
            class="client-card d-table full-width full-height padding-5 text-left o-hidden">
-          <div [ngStyle]="{'background-image': 'url(' + client.photo + ')'}"
+          <div [ngStyle]="{'background-image': 'url(' + (client.photo || photoPlaceholder) + ')'}"
                class="client-card__photo d-table-cell v-middle">
           </div>
           <div class="client-card__text d-table-cell v-middle">{{client}}</div>

@@ -3,6 +3,8 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ClientsService } from './clients.service';
 import { Client } from './client';
 
+const PHOTO_PLACEHOLDER = 'https://image.ibb.co/k9idn7/client_placeholder.png';
+
 @Component({
   templateUrl: './clients.component.html'
 })
@@ -13,6 +15,7 @@ export class ClientsComponent implements OnInit, OnDestroy {
   isLoading: boolean = true;
   isError: boolean = false;
   private subscription: any;
+  photoPlaceholder: string = PHOTO_PLACEHOLDER;
 
   constructor(private clientsService: ClientsService) {}
 

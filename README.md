@@ -20,19 +20,13 @@ TODO
 
 
 TODO:
-* frontend: do not cahce clients or invalidate
-* frontend: header padding +10px
-
-* frontend (client comp + spec)
-* frontend: return to homepage upon successful creation
-* frontend photo placeholder
+* frontend client comp spec
 * recheck frontend (cleanup etc)
 
-* insert fake data
+* add more fake data
 * clients POST
 * clients PATCH
-* clients GET
-* clients GET by id
 * backend tests
 * refactor ObjectId
 * refactor backend structure!?
+* recheck backend (cleanup etc)
