@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 import { ClientsService } from './clients.service';
 import { Client } from './client';
@@ -17,6 +17,7 @@ export class ClientComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private clientsService: ClientsService
   ) {}
 
@@ -55,8 +56,11 @@ export class ClientComponent implements OnInit {
         this.isFormLoading = false;
         this.error = 'Oops! Could not save the client';
       });
-    } else { // save new client
-      this.clientsService.saveClient(this.client).subscribe(this.clientSuccessfullySaved, error => {
+    } else { // save new client and go back to list page
+      this.clientsService.saveClient(this.client).subscribe(client => {
+        this.clientSuccessfullySaved(client);
+        setTimeout(() => this.router.navigate(['/']), 1000); // back to list page in 1s
+      }, error => {
         this.isFormLoading = false;
         this.error = 'Oops! Could not create new client';
       });

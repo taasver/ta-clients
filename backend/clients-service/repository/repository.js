@@ -31,7 +31,19 @@ module.exports = class ClientsRepository {
       this.collection.findOne({id: id}, { _id: 0, id: 1, title: 1, format: 1 }, (err, client) => {
         if (err) { reject(new Error(`An error occured fetching a client with id: ${id}, err: ${err}`)); }
         resolve(client);
-      })
+      });
+    });
+  }
+
+  insertClient(data) {
+    return new Promise((resolve, reject) => {
+
+      // TODO: validate
+      
+      this.collection.insertOne(data, (err, res) => {
+        if (err) { reject(new Error(`An error occured insering a client, err: ${err}`)); }
+        resolve(res.ops[0]);
+      });
     });
   }
   

@@ -11,6 +11,7 @@ const start = (options) => {
     const app = express();
     app.use(helmet());
     app.use(cors())
+    app.use(express.json());
     app.use((err, req, res, next) => {
       reject(new Error('Something went wrong!, err:' + err));
       res.status(500).send('Something went wrong!');

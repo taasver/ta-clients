@@ -15,6 +15,12 @@ module.exports = (app, options) => {
     repo.getClientById(req.params.id).then(client => {
       res.status(status.OK).json(client);
     }).catch(next);
-  })
+  });
+
+  app.post('/clients', (req, res, next) => {
+    repo.insertClient(req.body).then(client => {
+      res.status(status.OK).json(client);
+    }).catch(next);
+  });
 
 };

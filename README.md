@@ -21,7 +21,9 @@ TODO
 
 TODO:
 * frontend (client comp + spec)
+* frontend: return to homepage upon successful creation
 * frontend photo placeholder
+* frontend: do not cahce clients or invalidate
 * recheck frontend (cleanup etc)
 
 * insert fake data
