@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule }       from '@angular/router/testing';
 import { By }           from '@angular/platform-browser';
 import { FormsModule }  from '@angular/forms';
 import { Observable }   from 'rxjs/Observable';
@@ -41,7 +42,7 @@ describe('ClientsComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [ FormsModule ],
+      imports: [ FormsModule, RouterTestingModule ],
       declarations: [ ClientsComponent ],
       providers: [ {provide: ClientsService, useClass: ClientsServiceStub} ]
     });

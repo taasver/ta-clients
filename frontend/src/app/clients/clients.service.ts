@@ -1,14 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/map';
 
 import { Client } from './client';
 
 @Injectable()
 export class ClientsService {
-  private clients: Client[]; // cache 
 
   constructor(private http: Http) {}
 
@@ -16,12 +14,7 @@ export class ClientsService {
     let url = `${process.env.API_URL}/clients`;
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    if (this.clients) { return Observable.of(this.clients); } // return cached results if its there
-    return this.http.get(url, {headers: headers}).map(response => {
-      // setup client class instances and store them in cache
-      this.clients = response.json().map((data: any) => new Client(data));
-      return this.clients;
-    });
+    return this.http.get(url, {headers: headers}).map(response => response.json().map((data: any) => new Client(data)));
   }
 
   getClient = (id: string): Observable<Client> => {

@@ -27,14 +27,11 @@ describe('ClientsService', () => {
     service = new ClientsService(http);
   });
 
-  it('should call the backend on getClients call and cache the results', done => {
+  it('should call the backend on getClients call', done => {
     service.getClients().subscribe(() => {
       expect(spyGet.calls.count()).toBe(1);
       expect(spyGet.calls.first().args[0]).toBe('http://test.test/clients');
-      service.getClients().subscribe(() => {
-        expect(spyGet.calls.count()).toBe(1);
-        done();
-      });
+      done();
     });
   });
 
