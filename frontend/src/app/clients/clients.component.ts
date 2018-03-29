@@ -17,9 +17,9 @@ export class ClientsComponent implements OnInit, OnDestroy {
   constructor(private clientsService: ClientsService) {}
 
   ngOnInit() {
-    this.subscription = this.clientsService.getClients().subscribe(data => {
+    this.subscription = this.clientsService.getClients().subscribe(clients => {
       this.isLoading = false;
-      this.clients = data;
+      this.clients = clients;
       this.filteredClients = this.clients; // display all by default
     }, error => {
       this.isLoading = false;

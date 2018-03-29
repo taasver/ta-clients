@@ -13,7 +13,7 @@
 .clients {
   @media (min-width: $xs) { padding: 10px; }
 }
-.clients-container {
+.client-card-container {
   @media (min-width: $xs) {
     padding: 10px;
     float: left;
@@ -23,7 +23,7 @@
   @media (min-width: $sm) { width: 20%; }
   @media (min-width: $md) { width: 16%; }
 }
-.clients {
+.client-card {
   @include transition(all 0.2s ease);
   border-bottom: 1px solid $gray;
   &__photo {

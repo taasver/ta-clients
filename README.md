@@ -20,8 +20,10 @@ TODO
 
 
 TODO:
-* frontend (clients comp + spec, client comp + spec)
+* frontend (client comp + spec)
 * frontend photo placeholder
+* recheck frontend (cleanup etc)
+
 * insert fake data
 * clients POST
 * clients PATCH
@@ -29,4 +31,3 @@ TODO:
 * clients GET by id
 * backend tests
 * refactor backend structure!?
-* recheck frontend (cleanup etc)

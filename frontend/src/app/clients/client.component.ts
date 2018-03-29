@@ -27,13 +27,13 @@ export class ClientComponent implements OnInit {
       // new client
       if (!params.id) {
         this.isLoading = false;
-        this.client = new Client();
+        this.client = new Client({});
         return;
       }
       // existing client
-      this.clientsService.getClient(params.id).subscribe(data => {
+      this.clientsService.getClient(params.id).subscribe(client => {
         this.isLoading = false;
-        this.client = data;
+        this.client = client;
       }, error => {
         this.isLoading = false;
         this.error = 'Oops! Could not load the client';
@@ -50,7 +50,7 @@ export class ClientComponent implements OnInit {
       return;
     }
     this.isFormLoading = true;
-    if (this.client.id) { // update existing client
+    if (this.client._id) { // update existing client
       this.clientsService.updateClient(this.client).subscribe(this.clientSuccessfullySaved, error => {
         this.isFormLoading = false;
         this.error = 'Oops! Could not save the client';

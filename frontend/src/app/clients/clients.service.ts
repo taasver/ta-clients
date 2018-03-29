@@ -12,36 +12,37 @@ export class ClientsService {
 
   constructor(private http: Http) {}
 
-  getClients = (): Observable<any> => {
+  getClients = (): Observable<Client[]> => {
     let url = `${process.env.API_URL}/clients`;
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     if (this.clients) { return Observable.of(this.clients); } // return cached results if its there
     return this.http.get(url, {headers: headers}).map(response => {
-      this.clients = response.json(); // store it in cache
+      // setup client class instances and store them in cache
+      this.clients = response.json().map((data: any) => new Client(data));
       return this.clients;
     });
   }
 
-  getClient = (id: string): Observable<any> => {
+  getClient = (id: string): Observable<Client> => {
     let url = `${process.env.API_URL}/clients/${id}`;
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.get(url, {headers: headers}).map(response => response.json());
+    return this.http.get(url, {headers: headers}).map(response => new Client(response.json()));
   }
 
-  saveClient = (client: Client): Observable<any> => {
+  saveClient = (client: Client): Observable<Client> => {
     let url = `${process.env.API_URL}/clients`;
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.post(url, client, {headers: headers}).map(response => response.json());
+    return this.http.post(url, client, {headers: headers}).map(response => new Client(response.json()));
   }
 
-  updateClient = (client: Client): Observable<any> => {
-    let url = `${process.env.API_URL}/clients/${client.id}`;
+  updateClient = (client: Client): Observable<Client> => {
+    let url = `${process.env.API_URL}/clients/${client._id}`;
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.patch(url, client, {headers: headers}).map(response => response.json());
+    return this.http.patch(url, client, {headers: headers}).map(response => new Client(response.json()));
   }
 
 }

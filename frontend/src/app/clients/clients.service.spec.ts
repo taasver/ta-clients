@@ -16,7 +16,7 @@ describe('ClientsService', () => {
   beforeEach(() => {
     const http = new Http(new MockBackend(), new BaseRequestOptions());
     spyGet = spyOn(http, 'get').and.returnValue(
-      Observable.of(new Response(new ResponseOptions({ body: JSON.stringify({}) })))
+      Observable.of(new Response(new ResponseOptions({ body: JSON.stringify([]) })))
     );
     spyPost = spyOn(http, 'post').and.returnValue(
       Observable.of(new Response(new ResponseOptions({ body: JSON.stringify({}) })))
@@ -47,9 +47,7 @@ describe('ClientsService', () => {
   });
 
   it('should call the backend on saveClient call', done => {
-    let client = new Client();
-    client.email = 'test@email.com';
-    client.phone = '123223';
+    let client = new Client({ email: 'test@email.com', phone: '123223' });
     service.saveClient(client).subscribe(() => {
       expect(spyPost.calls.count()).toBe(1);
       expect(spyPost.calls.first().args[0]).toBe('http://test.test/clients');
@@ -59,10 +57,7 @@ describe('ClientsService', () => {
   });
 
   it('should call the backend on updateClient call', done => {
-    let client = new Client();
-    client.id = '123';
-    client.email = 'test@email.com';
-    client.phone = '123223';
+    let client = new Client({ _id: '123', email: 'test@email.com', phone: '123223' });
     service.updateClient(client).subscribe(() => {
       expect(spyPatch.calls.count()).toBe(1);
       expect(spyPatch.calls.first().args[0]).toBe('http://test.test/clients/123');

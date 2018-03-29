@@ -1,8 +1,8 @@
 <div class="text-center">
 
   <!-- SEARCH INPUT -->
-  <div class="clients-header pos-fix full-width white-bg padding-10">
-    <div class="container">
+  <div class="clients-header pos-fix full-width white-bg">
+    <div class="container padding-10">
       <div class="clients-header__input pull-left full-width pos-rel">
         <label for="clients-query" class="pos-abs left-0 z-1 font-18 cursor-pointer brand-primary">
           <i class="input-simple__icon fa fa-search white-bg" aria-hidden="true">
@@ -39,12 +39,12 @@
 
     <!-- RESULTS -->
     <div *ngIf="filteredClients.length" class="clients container">
-      <div *ngFor="let client of filteredClients" class="client-container">
-        <div class="client d-table full-width full-height padding-5 text-left o-hidden cursor-pointer">
+      <div *ngFor="let client of filteredClients" class="client-card-container">
+        <div class="client-card d-table full-width full-height padding-5 text-left o-hidden cursor-pointer">
           <div [ngStyle]="{'background-image': 'url(' + client.photo + ')'}"
-               class="client__photo d-table-cell v-middle">
+               class="client-card__photo d-table-cell v-middle">
           </div>
-          <div class="client__text d-table-cell v-middle">{{client}}</div>
+          <div class="client-card__text d-table-cell v-middle">{{client}}</div>
         </div>
       </div>
     </div>

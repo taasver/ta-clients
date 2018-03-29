@@ -1,8 +1,16 @@
+const demo = require('./demo');
+
 module.exports = class ClientsRepository {
 
   constructor(db) {
     this.db = db;
     this.collection = this.db.collection('clients');
+
+    // This step is only for demo purposes
+    this.getClients().then(clients => {
+      if (!clients.length) { this.insertDemoData(); }
+    });
+
   }
 
   getClients() {
@@ -29,6 +37,13 @@ module.exports = class ClientsRepository {
   
   disconnect() {
     this.db.close();
+  }
+
+  // insert some inital data to db, only for demo purposes
+  insertDemoData() {
+    this.collection.insertMany(demo.CLIENTS, function(err, res) {
+      if (err) { reject(new Error('An error occured inserting demo data, err:' + err)); }
+    });
   }
 
 };
