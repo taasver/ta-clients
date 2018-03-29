@@ -57,8 +57,8 @@ describe('ClientsService', () => {
   });
 
   it('should call the backend on updateClient call', done => {
-    let client = new Client({ _id: '123', email: 'test@email.com', phone: '123223' });
-    service.updateClient(client).subscribe(() => {
+    let client = new Client({email: 'test@email.com'});
+    service.updateClient('123', client).subscribe(() => {
       expect(spyPatch.calls.count()).toBe(1);
       expect(spyPatch.calls.first().args[0]).toBe('http://test.test/clients/123');
       expect(spyPatch.calls.first().args[1].email).toBe('test@email.com');

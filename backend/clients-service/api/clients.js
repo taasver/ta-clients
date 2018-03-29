@@ -23,4 +23,10 @@ module.exports = (app, options) => {
     }).catch(next);
   });
 
+  app.patch('/clients/:id', (req, res, next) => {
+    repo.updateClient(req.params.id, req.body).then(client => {
+      res.status(status.OK).json(client);
+    }).catch(next);
+  });
+
 };

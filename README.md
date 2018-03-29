@@ -32,4 +32,5 @@ TODO:
 * clients GET
 * clients GET by id
 * backend tests
+* refactor ObjectId
 * refactor backend structure!?

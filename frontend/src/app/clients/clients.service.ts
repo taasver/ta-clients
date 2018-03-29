@@ -38,11 +38,11 @@ export class ClientsService {
     return this.http.post(url, client, {headers: headers}).map(response => new Client(response.json()));
   }
 
-  updateClient = (client: Client): Observable<Client> => {
-    let url = `${process.env.API_URL}/clients/${client._id}`;
+  updateClient = (id: string, newValues: any): Observable<Client> => {
+    let url = `${process.env.API_URL}/clients/${id}`;
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.patch(url, client, {headers: headers}).map(response => new Client(response.json()));
+    return this.http.patch(url, newValues, {headers: headers}).map(response => new Client(response.json()));
   }
 
 }

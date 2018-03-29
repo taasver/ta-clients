@@ -40,12 +40,13 @@
     <!-- RESULTS -->
     <div *ngIf="filteredClients.length" class="clients container">
       <div *ngFor="let client of filteredClients" class="client-card-container">
-        <div class="client-card d-table full-width full-height padding-5 text-left o-hidden cursor-pointer">
+        <a routerLink="client/{{client._id}}"
+           class="client-card d-table full-width full-height padding-5 text-left o-hidden">
           <div [ngStyle]="{'background-image': 'url(' + client.photo + ')'}"
                class="client-card__photo d-table-cell v-middle">
           </div>
           <div class="client-card__text d-table-cell v-middle">{{client}}</div>
-        </div>
+        </a>
       </div>
     </div>
 

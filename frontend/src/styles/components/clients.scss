@@ -26,6 +26,7 @@
 .client-card {
   @include transition(all 0.2s ease);
   border-bottom: 1px solid $gray;
+  color: $text-color;
   &__photo {
     height: 50px;
     width: 50px;
