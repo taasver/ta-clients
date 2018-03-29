@@ -24,12 +24,9 @@ NB! since I'm applying for frontend position the backend might not be perfect.
 
 TODO:
 * frontend client comp spec
-* make phone-non changeable
 * recheck frontend (cleanup etc)
 
 * add more fake data
-* POST validation
-* PATCH validation
 * phone validation
 * store phone in a secure encrypted way
 * phone last 4 digits
