@@ -30,9 +30,8 @@ With bigger data sets it would be necessary to implement lazy-loading/pagination
 
 
 TODO:
-* run both backend and frontend from root folder
-* frontend client comp spec
 * recheck frontend (cleanup etc)
+* run both backend and frontend from root folder
 * backend tests
 * refactor ObjectId
 * refactor backend structure!?
