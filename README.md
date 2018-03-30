@@ -24,7 +24,11 @@ NB! since I'm applying for frontend position the backend might not be perfect.
 
 
 TODO:
-* add more fake data
+* comment about only frontend filtering
+* run both backend and frontend from root folder
+
+* do not search from phone numbers
+
 * frontend client comp spec
 * recheck frontend (cleanup etc)
 * backend tests
