@@ -7,7 +7,7 @@
 * run `npm install` in `ta-clients/frontend` folder
 
 ### Development environment:
-* run `npm start` (from `ta-clients` folder) - starts development server
+* run `npm start` (from `ta-clients` folder) - starts both backend and frontend development servers
 * open http://localhost:8080 (if not automatically opened)
 
 ### Backend
@@ -30,9 +30,10 @@ With bigger data sets it would be necessary to implement lazy-loading/pagination
 
 
 TODO:
-* recheck frontend (cleanup etc)
-* run both backend and frontend from root folder
-* backend tests
-* refactor ObjectId
-* refactor backend structure!?
-* recheck backend (cleanup etc)
+1. recheck frontend (cleanup etc)
+2. backend tests
+3. refactor ObjectId
+4. refactor backend structure!?
+5. recheck backend (cleanup etc)
+6. update documentation
+7. UK format phone

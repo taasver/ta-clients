@@ -1,0 +1,13 @@
+{
+  "name": "ta-clients",
+  "version": "0.0.1",
+  "author": "Taavi Aasver",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "start": "concurrently --kill-others \"cd backend/clients-service && npm run start\" \"cd frontend &&npm run start\""
+  },
+  "dependencies": {
+    "concurrently": "3.5.1"
+  }
+}

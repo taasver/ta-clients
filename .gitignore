@@ -1,3 +1,4 @@
+node_modules
 npm-debug.log
 backend/clients-service/node_modules
 backend/clients-service/npm-debug.log
