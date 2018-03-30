@@ -1,7 +1,11 @@
+const crypto = require('crypto');
 const phoneUtil = require('google-libphonenumber').PhoneNumberUtil.getInstance();
 
 const demo = require('./demo');
 const ObjectId = require('mongodb').ObjectId; // TODO: refactor, should be in config or somewhere else
+
+const CRYPTO_KEY = 'a6F3cgtl';
+const CRYPTO_ALGORITHM = 'aes-256-ctr';
 
 module.exports = class ClientsRepository {
 
@@ -55,10 +59,8 @@ module.exports = class ClientsRepository {
         reject({invalidData: true, message: err.message + '. Valid format: +44 020 3000 2006'});
         return;
       }
-
-      // TODO: encrypt nr
-
-
+      // encrypt phone number
+      data.phone = this.encrypt(data.phone);
       this.collection.insertOne(data, (err, res) => {
         if (err) { reject(new Error(`An error occured insering a client, err: ${err}`)); }
         resolve(res.ops[0]);
@@ -85,6 +87,20 @@ module.exports = class ClientsRepository {
   
   disconnect() {
     this.db.close();
+  }
+
+  encrypt(text) {
+    let cipher = crypto.createCipher(CRYPTO_ALGORITHM, CRYPTO_KEY);
+    let crypted = cipher.update(text, 'utf8', 'hex');
+    crypted += cipher.final('hex');
+    return crypted;
+  }
+
+  decrypt(text) {
+    let decipher = crypto.createDecipher(CRYPTO_ALGORITHM, CRYPTO_KEY);
+    let dec = decipher.update(text, 'hex' , 'utf8');
+    dec += decipher.final('utf8');
+    return dec;
   }
 
   // insert some inital data to db, only for demo purposes

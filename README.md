@@ -20,6 +20,7 @@ NB! since I'm applying for frontend position the backend might not be perfect.
 ### Further improvements (will not be done in the scope of this test)
 * delete client possibility
 * validate email and other fields
+* there is no phone and/or email uniqueness check
 
 
 TODO:
@@ -37,5 +38,3 @@ TODO:
 
 https://medium.com/@cramirez92/build-a-nodejs-cinema-microservice-and-deploying-it-with-docker-part-1-7e28e25bfa8b
 https://medium.freecodecamp.org/building-a-simple-node-js-api-in-under-30-minutes-a07ea9e390d2
-
-https://github.com/ruimarinho/google-libphonenumber
