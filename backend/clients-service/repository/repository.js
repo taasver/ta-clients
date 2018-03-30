@@ -1,3 +1,5 @@
+const phoneUtil = require('google-libphonenumber').PhoneNumberUtil.getInstance();
+
 const demo = require('./demo');
 const ObjectId = require('mongodb').ObjectId; // TODO: refactor, should be in config or somewhere else
 
@@ -38,13 +40,21 @@ module.exports = class ClientsRepository {
 
   insertClient(data) {
     return new Promise((resolve, reject) => {
+      // make sure that phone number and email are there
       if (!data.email || !data.phone) {
         reject({invalidData: true, message: 'Please enter phone and email!'});
         return;
       }
-
-      // TODO: validate UK nr
-
+      // validate phone number
+      try {
+        const number = phoneUtil.parseAndKeepRawInput(data.phone, 'UK');
+        if (!phoneUtil.isValidNumber(number)) {
+          throw new Error('Invalid phone number format');
+        }
+      } catch (err) {
+        reject({invalidData: true, message: err.message + '. Valid format: +44 020 3000 2006'});
+        return;
+      }
 
       // TODO: encrypt nr
 

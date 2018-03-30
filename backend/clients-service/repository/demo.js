@@ -1,7 +1,7 @@
 const CLIENTS = [
   {
     'email': 'michael@kr.com',
-    'phone': '450-3232-223-44',
+    'phone': '+44 020 3000 2006',
     'firstName': 'Michael',
     'lastName': 'Knight',
     'photo': 'https://i.pinimg.com/originals/db/cb/ce/dbcbced16c890394339919a287612e3e.jpg',

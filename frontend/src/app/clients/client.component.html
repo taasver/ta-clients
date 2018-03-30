@@ -18,7 +18,7 @@
     <div *ngIf="!client._id" class="client__field">
       <label for="phone" class="inline-block padding-5">Phone Number*</label>
       <input [(ngModel)]="client.phone" type="text" id="phone" name="phone"
-             class="input-simple full-width padding-10" placeholder="0800 432 1234"
+             class="input-simple full-width padding-10" placeholder="+44 020 3000 2006"
              [class.input-simple--invalid]="isFormSubmitted && !client.phone" />
     </div>
     <div class="client__field">
