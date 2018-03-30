@@ -24,17 +24,10 @@ NB! since I'm applying for frontend position the backend might not be perfect.
 
 
 TODO:
-* store phone in a secure encrypted way
-* phone last 4 digits
-
+* add more fake data
 * frontend client comp spec
 * recheck frontend (cleanup etc)
-
-* add more fake data
 * backend tests
 * refactor ObjectId
 * refactor backend structure!?
 * recheck backend (cleanup etc)
-
-https://medium.com/@cramirez92/build-a-nodejs-cinema-microservice-and-deploying-it-with-docker-part-1-7e28e25bfa8b
-https://medium.freecodecamp.org/building-a-simple-node-js-api-in-under-30-minutes-a07ea9e390d2
