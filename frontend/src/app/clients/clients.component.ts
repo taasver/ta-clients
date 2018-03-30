@@ -34,10 +34,10 @@ export class ClientsComponent implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
 
-  // Filter all clients based on query string. Search from names, numbers and emails etc (case insensitive)
+  // Filter all clients based on query string. Search from names, emails etc (case insensitive)
   search() {
     let query = this.query.toLowerCase();
-    let searchFields: string[] = ['id', 'email', 'phone', 'firstName', 'lastName', 'company'];
+    let searchFields: string[] = ['_id', 'email', 'firstName', 'lastName', 'company'];
     this.filteredClients = this.clients.filter((client: Client) => {
       for (var i = 0; i < searchFields.length; i++) {
         let field = searchFields[i];

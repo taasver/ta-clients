@@ -24,7 +24,8 @@ module.exports = class ClientsRepository {
 
   getClients() {
     return new Promise((resolve, reject) => {
-      this.collection.find({}).project({email: 1, firstName: 1, lastName: 1, photo: 1}).toArray((err, clients) => {
+      this.collection.find({}).project({email: 1, firstName: 1, lastName: 1, photo: 1, company: 1})
+      .toArray((err, clients) => {
         if (err) { reject(new Error('An error occured fetching all clients, err:' + err)); }
         resolve(clients);
       });

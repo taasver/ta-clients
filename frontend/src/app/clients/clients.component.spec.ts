@@ -92,8 +92,8 @@ describe('ClientsComponent', () => {
     expect(count.textContent).toContain('Found 1 client');
   });
 
-  it('should find a client when searching by phone', () => {
-    searchInput.value = '342-234-841';
+  it('should find a client when searching by email', () => {
+    searchInput.value = 'ba@gmail.com';
     searchInput.dispatchEvent(new Event('input'));
     fixture.detectChanges();
     let clients = fixture.debugElement.queryAll(By.css('.client-card'));

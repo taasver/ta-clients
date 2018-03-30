@@ -17,18 +17,20 @@ NB! since I'm applying for frontend position the backend might not be perfect.
 ### Frontend
 * frontend tech: Angular, Typescript, Webpack, SCSS
 
+### Additional information
+My app is developed with the assumption that there will not be huge amount of clients (to keep backend simpler).
+This is why my frontend does only 1 query to the API, stores the list and searches are made in the frontend.
+With bigger data sets it would be necessary to implement lazy-loading/pagination and search functionality on the backend.
+
 ### Further improvements (will not be done in the scope of this test)
 * delete client possibility
 * validate email and other fields
 * there is no phone and/or email uniqueness check
+* deployment setup/conf etc
 
 
 TODO:
-* comment about only frontend filtering
 * run both backend and frontend from root folder
-
-* do not search from phone numbers
-
 * frontend client comp spec
 * recheck frontend (cleanup etc)
 * backend tests
