@@ -2,6 +2,7 @@
 
 ### Installation:
 * make sure you have **node** and **npm** installed
+* you have to have **MongoDB** installed and running (https://docs.mongodb.com/manual/installation/)
 * run `npm install` in `ta-clients` folder
 * run `npm install` in `ta-clients/backend/clients-service` folder
 * run `npm install` in `ta-clients/frontend` folder
@@ -16,7 +17,7 @@
 
 ### Backend
 NB! since I'm applying for frontend position the backend might not be perfect.
-* backend tech: **Node.js**, **Express**, **Mongodb**
+* backend tech: **Node.js**, **Express**, **MongoDB**
 * there are no backend tests for now to save a bit of time, sorry..
 
 ### Additional information
