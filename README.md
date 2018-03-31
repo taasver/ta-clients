@@ -16,6 +16,7 @@ NB! since I'm applying for frontend position the backend might not be perfect.
 
 ### Frontend
 * frontend tech: Angular, Typescript, Webpack, SCSS
+* for tests run `npm test` (from `ta-clients/frontend` folder)
 
 ### Additional information
 My app is developed with the assumption that there will not be huge amount of clients (to keep backend simpler).
@@ -30,9 +31,8 @@ With bigger data sets it would be necessary to implement lazy-loading/pagination
 
 
 TODO:
-1. recheck frontend (cleanup etc)
-2. backend tests
-3. refactor ObjectId
-4. refactor backend structure!?
-5. recheck backend (cleanup etc)
-6. update documentation
+1. backend tests
+2. refactor ObjectId
+3. refactor backend structure!?
+4. recheck backend (cleanup etc)
+5. update documentation
