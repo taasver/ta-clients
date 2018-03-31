@@ -10,13 +10,14 @@
 * run `npm start` (from `ta-clients` folder) - starts both backend and frontend development servers
 * open http://localhost:8080 (if not automatically opened)
 
+### Frontend
+* frontend tech: **Angular**, **Typescript**, **Webpack**, **SCSS**
+* for tests run `npm test` (from `ta-clients/frontend` folder)
+
 ### Backend
 NB! since I'm applying for frontend position the backend might not be perfect.
-* backend tech: Node.js, Express, Mongodb
-
-### Frontend
-* frontend tech: Angular, Typescript, Webpack, SCSS
-* for tests run `npm test` (from `ta-clients/frontend` folder)
+* backend tech: **Node.js**, **Express**, **Mongodb**
+* there are no backend tests for now to save a bit of time, sorry..
 
 ### Additional information
 My app is developed with the assumption that there will not be huge amount of clients (to keep backend simpler).
@@ -28,11 +29,4 @@ With bigger data sets it would be necessary to implement lazy-loading/pagination
 * validate email and other fields
 * there is no phone and/or email uniqueness check
 * deployment setup/conf etc
-
-
-TODO:
-1. backend tests
-2. refactor ObjectId
-3. refactor backend structure!?
-4. recheck backend (cleanup etc)
-5. update documentation
+* backend test

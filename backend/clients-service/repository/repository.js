@@ -2,7 +2,7 @@ const crypto = require('crypto');
 const phoneUtil = require('google-libphonenumber').PhoneNumberUtil.getInstance();
 
 const demo = require('./demo');
-const ObjectId = require('mongodb').ObjectId; // TODO: refactor, should be in config or somewhere else
+const ObjectId = require('mongodb').ObjectId; // TODO: refactor, would be nicer if its in /config or somewhere else
 
 const CRYPTO_KEY = 'a6F3cgtl';
 const CRYPTO_ALGORITHM = 'aes-256-ctr';
