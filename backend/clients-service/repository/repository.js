@@ -54,6 +54,7 @@ module.exports = class ClientsRepository {
         if (!phoneUtil.isValidNumber(number)) {
           throw new Error('Invalid phone number format');
         }
+        data.phone = phoneUtil.formatOutOfCountryCallingNumber(number, 'UK');
       } catch (err) {
         reject({invalidData: true, message: err.message + '. Valid format: +44 020 3000 2006'});
         return;

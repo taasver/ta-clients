@@ -36,4 +36,3 @@ TODO:
 4. refactor backend structure!?
 5. recheck backend (cleanup etc)
 6. update documentation
-7. UK format phone
